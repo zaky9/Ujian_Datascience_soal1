@@ -40,7 +40,10 @@ xaxis = x.reshape(-1,1) # reshape x from 1D to 2D
 modelmin1971.fit(xaxis,min1971)
 # prediksi 2050
 ban = modelmin1971.predict([[2050]])
-print('2050 banten =', ban)
+print('Jumlah penduduk di banten tahun 2050 =', ban)
+# Accuracy
+print('R^2 = ', round(modelmin1971.score(xaxis,min1971)*100,2),'%')
+# best fit line buat prediksi
 bmin1971 = modelmin1971.predict(xaxis)  
 
 
@@ -48,15 +51,21 @@ bmin1971 = modelmin1971.predict(xaxis)
 modelmax2010.fit(xaxis,max2010)
 # prediksi 2050
 jabar = modelmax2010.predict([[2050]])
-print('2050 jabar =', jabar)
+print('Jumlah penduduk di jabar tahun 2050 =', jabar)
+# Accuracy
+print('R^2 = ', round(modelmax2010.score(xaxis,max2010)*100,2),'%')
+# best fit line buat prediksi
 bmax2010 = modelmax2010.predict(xaxis)
 
 
-# Polulasi Indonesia (bindo)
+# -- Polulasi Indonesia (bindo) --
 modelindo.fit(xaxis,sumpop)
 # prediksi 2050
 indo = modelindo.predict([[2050]])
-print('2050 indo = ',indo)
+print('Jumlah penduduk di indo tahun 2050 =',indo)
+# Accuracy
+print('R^2 = ', round(modelindo.score(xaxis,sumpop)*100,2),'%')
+# best fit line buat prediksi
 bindo = modelindo.predict(xaxis)
 
 # Best fit line
